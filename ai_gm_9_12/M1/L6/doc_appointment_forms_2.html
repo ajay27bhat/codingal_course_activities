@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Doctor's Appointment</title>
+</head>
+
+<body>
+
+    <h1>🏥 My Doctor's Appointment</h1>
+    <p>Fill in the form to book your appointment.</p>
+    <hr>
+
+    <!-- Create a form to collect the patient's information -->
+    <form>
+
+        <!-- Add personal information fields -->
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <br><br>
+
+            <label for="patient-id">Patient ID:</label>
+            <input type="password" id="patient-id" placeholder="Enter your ID">
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+        </fieldset>
+
+        <br>
+
+        <!-- Add fields related to the doctor's visit -->
+        <fieldset>
+            <legend>Your Visit</legend>
+
+            <label for="doctor">Choose your Doctor:</label>
+            <select id="doctor">
+                <option value="">-- Select a doctor --</option>
+                <option value="general">Dr. Ray - General</option>
+                <option value="teeth">Dr. Lee - Teeth</option>
+                <option value="eyes">Dr. Sam - Eyes</option>
+            </select>
+
+            <br><br>
+
+            <label>Why are you visiting?</label><br>
+
+            <!-- Use radio buttons when the user can select only one option -->
+            <input type="radio" name="reason" value="fever"> Fever<br>
+            <input type="radio" name="reason" value="cold"> Cold<br>
+            <input type="radio" name="reason" value="checkup"> Checkup<br>
+            <input type="radio" name="reason" value="tooth"> Tooth Pain
+
+            <br><br>
+
+            <label for="notes">Notes for the doctor:</label><br>
+            <textarea id="notes" rows="4" cols="35"
+                placeholder="Enter your message"></textarea>
+        </fieldset>
+
+        <br>
+
+        <!-- Use checkboxes when the user can select multiple options -->
+        <fieldset>
+            <legend>Preferred Visit Day</legend>
+
+            <input type="checkbox" value="monday"> Monday<br>
+            <input type="checkbox" value="wednesday"> Wednesday<br>
+            <input type="checkbox" value="friday"> Friday
+        </fieldset>
+
+        <br>
+
+        <!-- Add a submit button to send the form -->
+        <input type="submit" value="Book My Appointment">
+
+    </form>
+
+</body>
+</html>
