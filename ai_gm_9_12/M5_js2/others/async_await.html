@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Async Await</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Async / Await</h1>
+
+    <p>
+        <b>async/await</b> provides a simpler way to work
+        with Promises.
+    </p>
+
+    <hr>
+
+    <h2>1. Basic async/await</h2>
+
+    <button onclick="basicExample()">
+        Start Task
+    </button>
+
+    <p id="basicResult"></p>
+
+    <hr>
+
+    <h2>2. async/await with User Input</h2>
+
+    <input type="number" id="marks"
+           placeholder="Enter marks">
+
+    <button onclick="checkMarks()">
+        Check Marks
+    </button>
+
+    <p id="marksResult"></p>
+
+    <hr>
+
+    <h2>3. async/await with Error Handling</h2>
+
+    <button onclick="errorExample()">
+        Run Example
+    </button>
+
+    <p id="errorResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // A FUNCTION THAT RETURNS A PROMISE
+        // --------------------------------
+
+        function doTask() {
+
+            return new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    resolve("✅ Task completed!");
+
+                }, 2000);
+
+            });
+        }
+
+
+        // --------------------------------
+        // 1. BASIC ASYNC / AWAIT
+        // --------------------------------
+
+        async function basicExample() {
+
+            document.getElementById("basicResult").innerHTML =
+                "⏳ Task is running...";
+
+            let result = await doTask();
+
+            document.getElementById("basicResult").innerHTML =
+                result;
+        }
+
+
+        // --------------------------------
+        // 2. ASYNC / AWAIT WITH INPUT
+        // --------------------------------
+
+        function checkMarksPromise(marks) {
+
+            return new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    if (marks >= 40) {
+
+                        resolve(
+                            "✅ Passed! Marks: " + marks
+                        );
+
+                    } else {
+
+                        reject(
+                            "❌ Failed! Marks: " + marks
+                        );
+                    }
+
+                }, 1500);
+
+            });
+        }
+
+
+        async function checkMarks() {
+
+            let marks =
+                Number(document.getElementById("marks").value);
+
+            document.getElementById("marksResult").innerHTML =
+                "⏳ Checking marks...";
+
+            try {
+
+                let result =
+                    await checkMarksPromise(marks);
+
+                document.getElementById("marksResult").innerHTML =
+                    result;
+
+            } catch (error) {
+
+                document.getElementById("marksResult").innerHTML =
+                    error;
+            }
+        }
+
+
+        // --------------------------------
+        // 3. ERROR HANDLING
+        // --------------------------------
+
+        function riskyTask() {
+
+            return new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    reject("❌ Something went wrong!");
+
+                }, 1500);
+
+            });
+        }
+
+
+        async function errorExample() {
+
+            document.getElementById("errorResult").innerHTML =
+                "⏳ Running task...";
+
+            try {
+
+                let result = await riskyTask();
+
+                document.getElementById("errorResult").innerHTML =
+                    result;
+
+            } catch (error) {
+
+                document.getElementById("errorResult").innerHTML =
+                    error;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
