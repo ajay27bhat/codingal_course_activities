@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parameters and Optional Parameters</title>
+</head>
+
+<body>
+
+    <h1>Parameters in JavaScript</h1>
+
+    <button onclick="showExamples()">Run Examples</button>
+
+    <div id="output"></div>
+
+
+    <script>
+
+        // Function with parameters
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+
+
+        // Function with multiple parameters
+        function add(a, b) {
+            return a + b;
+        }
+
+
+        // Function with an optional parameter
+        function welcome(name, message = "Welcome!") {
+            return message + " " + name;
+        }
+
+
+        function showExamples() {
+
+            let result = "";
+
+            // Passing a parameter
+            result += "<p>" + greet("Ajay") + "</p>";
+
+            // Passing two parameters
+            result += "<p>10 + 20 = " + add(10, 20) + "</p>";
+
+            // Providing the optional parameter
+            result += "<p>" + welcome("Rahul", "Good Morning!") + "</p>";
+
+            // Not providing the optional parameter
+            result += "<p>" + welcome("Priya") + "</p>";
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+
+</body>
+</html>
