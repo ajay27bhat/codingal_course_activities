@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Horizontal Scrollspy</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Horizontal Navigation Bar -->
+    <nav id="navbar" class="navbar navbar-expand bg-dark navbar-dark sticky-top">
+
+        <div class="container">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Scrollable Content -->
+    <div class="container mt-4"
+         data-bs-spy="scroll"
+         data-bs-target="#navbar"
+         data-bs-offset="70"
+         tabindex="0">
+
+        <section id="home" class="py-5">
+            <h2>Home</h2>
+            <p>
+                Welcome to our website. This is the home section.
+            </p>
+            <p>
+                Scroll down to see the other sections.
+            </p>
+        </section>
+
+        <section id="about" class="py-5">
+            <h2>About</h2>
+            <p>
+                We provide useful learning resources for students.
+            </p>
+            <p>
+                Our goal is to make learning simple and interesting.
+            </p>
+        </section>
+
+        <section id="services" class="py-5">
+            <h2>Services</h2>
+            <p>
+                We provide web development and programming courses.
+            </p>
+            <p>
+                Students can learn HTML, CSS, JavaScript and Bootstrap.
+            </p>
+        </section>
+
+        <section id="contact" class="py-5">
+            <h2>Contact</h2>
+            <p>
+                You can contact us for more information.
+            </p>
+            <p>
+                Thank you for visiting our website!
+            </p>
+        </section>
+
+    </div>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
