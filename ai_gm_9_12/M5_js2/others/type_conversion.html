@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Type Conversion</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Type Conversion</h1>
+
+    <p>
+        Type conversion means changing a value from
+        one data type to another.
+    </p>
+
+    <hr>
+
+    <h2>1. String to Number</h2>
+
+    <button onclick="stringToNumber()">
+        Convert "25" to Number
+    </button>
+
+    <p id="numberResult"></p>
+
+    <hr>
+
+    <h2>2. Number to String</h2>
+
+    <button onclick="numberToString()">
+        Convert 100 to String
+    </button>
+
+    <p id="stringResult"></p>
+
+    <hr>
+
+    <h2>3. String to Boolean</h2>
+
+    <button onclick="stringToBoolean()">
+        Convert String to Boolean
+    </button>
+
+    <p id="booleanResult"></p>
+
+    <hr>
+
+    <h2>4. Number to Boolean</h2>
+
+    <button onclick="numberToBoolean()">
+        Convert Number to Boolean
+    </button>
+
+    <p id="numberBooleanResult"></p>
+
+    <hr>
+
+    <h2>5. Boolean to Number</h2>
+
+    <button onclick="booleanToNumber()">
+        Convert Boolean to Number
+    </button>
+
+    <p id="booleanNumberResult"></p>
+
+    <hr>
+
+    <h2>6. Convert User Input</h2>
+
+    <input type="text" id="userInput"
+           placeholder="Enter a number">
+
+    <button onclick="convertInput()">
+        Convert
+    </button>
+
+    <p id="inputResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. STRING TO NUMBER
+        // --------------------------------
+
+        function stringToNumber() {
+
+            let value = "25";
+
+            let numberValue = Number(value);
+
+            document.getElementById("numberResult").innerHTML =
+                "Original value: " + value +
+                "<br>Original type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + numberValue +
+                "<br>Converted type: " + typeof numberValue;
+        }
+
+
+        // --------------------------------
+        // 2. NUMBER TO STRING
+        // --------------------------------
+
+        function numberToString() {
+
+            let value = 100;
+
+            let stringValue = String(value);
+
+            document.getElementById("stringResult").innerHTML =
+                "Original value: " + value +
+                "<br>Original type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + stringValue +
+                "<br>Converted type: " + typeof stringValue;
+        }
+
+
+        // --------------------------------
+        // 3. STRING TO BOOLEAN
+        // --------------------------------
+
+        function stringToBoolean() {
+
+            let value = "Hello";
+
+            let booleanValue = Boolean(value);
+
+            document.getElementById("booleanResult").innerHTML =
+                "Original value: " + value +
+                "<br>Original type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + booleanValue +
+                "<br>Converted type: " + typeof booleanValue;
+        }
+
+
+        // --------------------------------
+        // 4. NUMBER TO BOOLEAN
+        // --------------------------------
+
+        function numberToBoolean() {
+
+            let value = 1;
+
+            let booleanValue = Boolean(value);
+
+            document.getElementById("numberBooleanResult").innerHTML =
+                "Original value: " + value +
+                "<br>Original type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + booleanValue +
+                "<br>Converted type: " + typeof booleanValue;
+        }
+
+
+        // --------------------------------
+        // 5. BOOLEAN TO NUMBER
+        // --------------------------------
+
+        function booleanToNumber() {
+
+            let value = true;
+
+            let numberValue = Number(value);
+
+            document.getElementById("booleanNumberResult").innerHTML =
+                "Original value: " + value +
+                "<br>Original type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + numberValue +
+                "<br>Converted type: " + typeof numberValue;
+        }
+
+
+        // --------------------------------
+        // 6. USER INPUT
+        // --------------------------------
+
+        function convertInput() {
+
+            let value =
+                document.getElementById("userInput").value;
+
+            let numberValue = Number(value);
+
+            document.getElementById("inputResult").innerHTML =
+                "Input value: " + value +
+                "<br>Input type: " + typeof value +
+                "<br><br>" +
+
+                "Converted value: " + numberValue +
+                "<br>Converted type: " + typeof numberValue;
+        }
+
+    </script>
+
+</body>
+</html>
