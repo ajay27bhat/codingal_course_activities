@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Data Types</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Data Types</h1>
+
+    <p>
+        Enter a value and click the buttons below to see
+        different JavaScript data types.
+    </p>
+
+    <hr>
+
+    <h2>1. String</h2>
+
+    <button onclick="showString()">Show String</button>
+
+    <h2>2. Number</h2>
+
+    <button onclick="showNumber()">Show Number</button>
+
+    <h2>3. Boolean</h2>
+
+    <button onclick="showBoolean()">Show Boolean</button>
+
+    <h2>4. Undefined</h2>
+
+    <button onclick="showUndefined()">Show Undefined</button>
+
+    <h2>5. Null</h2>
+
+    <button onclick="showNull()">Show Null</button>
+
+    <h2>6. BigInt</h2>
+
+    <button onclick="showBigInt()">Show BigInt</button>
+
+    <h2>7. Symbol</h2>
+
+    <button onclick="showSymbol()">Show Symbol</button>
+
+    <h2>8. Object</h2>
+
+    <button onclick="showObject()">Show Object</button>
+
+    <h2>9. Array</h2>
+
+    <button onclick="showArray()">Show Array</button>
+
+    <hr>
+
+    <h2>Result</h2>
+
+    <p id="result">Click a button to see the result.</p>
+
+    <script>
+
+        // Display the value and its data type
+        function displayResult(name, value) {
+
+            document.getElementById("result").innerHTML =
+                "<strong>Data Type:</strong> " + name +
+                "<br><strong>Value:</strong> " + String(value) +
+                "<br><strong>typeof:</strong> " + typeof value;
+        }
+
+
+        // 1. STRING
+        function showString() {
+
+            let name = "Ajay";
+
+            displayResult("String", name);
+        }
+
+
+        // 2. NUMBER
+        function showNumber() {
+
+            let age = 20;
+
+            displayResult("Number", age);
+        }
+
+
+        // 3. BOOLEAN
+        function showBoolean() {
+
+            let isStudent = true;
+
+            displayResult("Boolean", isStudent);
+        }
+
+
+        // 4. UNDEFINED
+        function showUndefined() {
+
+            let value;
+
+            displayResult("Undefined", value);
+        }
+
+
+        // 5. NULL
+        function showNull() {
+
+            let value = null;
+
+            displayResult("Null", value);
+
+            // Special JavaScript behavior
+            document.getElementById("result").innerHTML +=
+                "<br><br><strong>Note:</strong> " +
+                "typeof null returns 'object' in JavaScript.";
+        }
+
+
+        // 6. BIGINT
+        function showBigInt() {
+
+            let bigNumber = 123456789012345678901234567890n;
+
+            displayResult("BigInt", bigNumber);
+        }
+
+
+        // 7. SYMBOL
+        function showSymbol() {
+
+            let id = Symbol("student");
+
+            document.getElementById("result").innerHTML =
+                "<strong>Data Type:</strong> Symbol" +
+                "<br><strong>Description:</strong> " + id.description +
+                "<br><strong>typeof:</strong> " + typeof id;
+        }
+
+
+        // 8. OBJECT
+        function showObject() {
+
+            let student = {
+                name: "Rahul",
+                age: 16,
+                grade: 10
+            };
+
+            document.getElementById("result").innerHTML =
+                "<strong>Data Type:</strong> Object" +
+                "<br><strong>Value:</strong> " +
+                JSON.stringify(student) +
+                "<br><strong>typeof:</strong> " +
+                typeof student;
+        }
+
+
+        // 9. ARRAY
+        function showArray() {
+
+            let subjects = [
+                "Python",
+                "JavaScript",
+                "HTML"
+            ];
+
+            document.getElementById("result").innerHTML =
+                "<strong>Data Type:</strong> Array" +
+                "<br><strong>Value:</strong> " +
+                subjects.join(", ") +
+                "<br><strong>typeof:</strong> " +
+                typeof subjects +
+                "<br><strong>Array.isArray():</strong> " +
+                Array.isArray(subjects);
+        }
+
+    </script>
+
+</body>
+</html>
