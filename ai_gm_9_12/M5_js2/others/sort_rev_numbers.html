@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort and Reverse Numbers</title>
+</head>
+
+<body>
+
+    <h1>Sort and Reverse Numbers</h1>
+
+    <p>
+        We have an array of numbers:
+    </p>
+
+    <h2 id="numbers"></h2>
+
+    <button onclick="sortAscending()">
+        Sort Ascending
+    </button>
+
+    <button onclick="sortDescending()">
+        Sort Descending
+    </button>
+
+    <button onclick="reverseNumbers()">
+        Reverse
+    </button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // Original array
+        let numbers = [40, 10, 30, 50, 20];
+
+        // Display original array
+        document.getElementById("numbers").innerHTML =
+            numbers.join(", ");
+
+
+        // --------------------------------
+        // SORT ASCENDING
+        // --------------------------------
+
+        function sortAscending() {
+
+            let result = [...numbers];
+
+            result.sort(function(a, b) {
+                return a - b;
+            });
+
+            document.getElementById("result").innerHTML =
+                "<b>Ascending Order:</b><br>" +
+                result.join(", ");
+        }
+
+
+        // --------------------------------
+        // SORT DESCENDING
+        // --------------------------------
+
+        function sortDescending() {
+
+            let result = [...numbers];
+
+            result.sort(function(a, b) {
+                return b - a;
+            });
+
+            document.getElementById("result").innerHTML =
+                "<b>Descending Order:</b><br>" +
+                result.join(", ");
+        }
+
+
+        // --------------------------------
+        // REVERSE
+        // --------------------------------
+
+        function reverseNumbers() {
+
+            let result = [...numbers];
+
+            result.reverse();
+
+            document.getElementById("result").innerHTML =
+                "<b>Reversed Array:</b><br>" +
+                result.join(", ");
+        }
+
+    </script>
+
+</body>
+</html>
