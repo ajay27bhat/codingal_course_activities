@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arrow Functions</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Arrow Functions</h1>
+
+    <p>
+        An arrow function is a shorter way to write a function.
+    </p>
+
+    <hr>
+
+    <h2>1. Simple Arrow Function</h2>
+
+    <button onclick="simpleExample()">
+        Say Hello
+    </button>
+
+    <p id="simpleResult"></p>
+
+    <hr>
+
+    <h2>2. Arrow Function with Parameter</h2>
+
+    <input type="text" id="name"
+           placeholder="Enter your name">
+
+    <button onclick="greetStudent()">
+        Greet
+    </button>
+
+    <p id="greetResult"></p>
+
+    <hr>
+
+    <h2>3. Arrow Function with Two Parameters</h2>
+
+    <button onclick="addNumbers()">
+        Add Numbers
+    </button>
+
+    <p id="addResult"></p>
+
+    <hr>
+
+    <h2>4. Arrow Function with map()</h2>
+
+    <button onclick="doubleNumbers()">
+        Double Numbers
+    </button>
+
+    <p id="mapResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. SIMPLE ARROW FUNCTION
+        // --------------------------------
+
+        const sayHello = () => {
+            return "Hello, students!";
+        };
+
+
+        function simpleExample() {
+
+            let message = sayHello();
+
+            document.getElementById("simpleResult").innerHTML =
+                message;
+        }
+
+
+        // --------------------------------
+        // 2. ARROW FUNCTION WITH PARAMETER
+        // --------------------------------
+
+        const greet = (name) => {
+            return "Hello, " + name + "!";
+        };
+
+
+        function greetStudent() {
+
+            let name =
+                document.getElementById("name").value;
+
+            document.getElementById("greetResult").innerHTML =
+                greet(name);
+        }
+
+
+        // --------------------------------
+        // 3. TWO PARAMETERS
+        // --------------------------------
+
+        const add = (a, b) => {
+            return a + b;
+        };
+
+
+        function addNumbers() {
+
+            let result = add(10, 20);
+
+            document.getElementById("addResult").innerHTML =
+                "10 + 20 = " + result;
+        }
+
+
+        // --------------------------------
+        // 4. ARROW FUNCTION WITH map()
+        // --------------------------------
+
+        function doubleNumbers() {
+
+            let numbers = [1, 2, 3, 4, 5];
+
+            let doubled =
+                numbers.map(number => number * 2);
+
+            document.getElementById("mapResult").innerHTML =
+                "<b>Original:</b> " +
+                numbers.join(", ") +
+
+                "<br><br><b>Doubled:</b> " +
+                doubled.join(", ");
+        }
+
+    </script>
+
+</body>
+</html>
