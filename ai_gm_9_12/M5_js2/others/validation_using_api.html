@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation Using API</title>
+</head>
+
+<body>
+
+    <h1>Validation Using API</h1>
+
+    <p>
+        We can use an API to check information
+        before accepting it.
+    </p>
+
+    <hr>
+
+    <h2>Check Username</h2>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter username"
+    >
+
+    <button onclick="validateUsername()">
+        Check Username
+    </button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // VALIDATE USERNAME USING API
+        // --------------------------------
+
+        async function validateUsername() {
+
+            let username =
+                document.getElementById("username").value.trim();
+
+            let result =
+                document.getElementById("result");
+
+
+            // --------------------------------
+            // STEP 1: BASIC VALIDATION
+            // --------------------------------
+
+            if (username === "") {
+
+                result.innerHTML =
+                    "❌ Please enter a username.";
+
+                return;
+            }
+
+
+            result.innerHTML =
+                "⏳ Checking username...";
+
+
+            try {
+
+                // --------------------------------
+                // STEP 2: CALL THE API
+                // --------------------------------
+
+                let response = await fetch(
+                    "https://jsonplaceholder.typicode.com/users"
+                );
+
+
+                // Convert response into JavaScript data
+                let users = await response.json();
+
+
+                // --------------------------------
+                // STEP 3: SEARCH THE API DATA
+                // --------------------------------
+
+                let user = users.find(function(user) {
+
+                    return user.username.toLowerCase() ===
+                           username.toLowerCase();
+
+                });
+
+
+                // --------------------------------
+                // STEP 4: SHOW VALIDATION RESULT
+                // --------------------------------
+
+                if (user) {
+
+                    result.innerHTML =
+                        "❌ Username already exists.";
+
+                } else {
+
+                    result.innerHTML =
+                        "✅ Username is available.";
+
+                }
+
+            } catch (error) {
+
+                result.innerHTML =
+                    "❌ Unable to validate username.";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
