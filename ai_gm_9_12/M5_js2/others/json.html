@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON in JavaScript</title>
+</head>
+
+<body>
+
+    <h1>JSON in JavaScript</h1>
+
+    <p>
+        JSON stands for <b>JavaScript Object Notation</b>.
+        It is commonly used to store and exchange data.
+    </p>
+
+    <hr>
+
+    <h2>1. JavaScript Object</h2>
+
+    <button onclick="showObject()">
+        Show Object
+    </button>
+
+    <p id="objectResult"></p>
+
+    <hr>
+
+    <h2>2. Object → JSON</h2>
+
+    <button onclick="convertToJSON()">
+        Convert to JSON
+    </button>
+
+    <p id="jsonResult"></p>
+
+    <hr>
+
+    <h2>3. JSON → Object</h2>
+
+    <button onclick="convertToObject()">
+        Parse JSON
+    </button>
+
+    <p id="parseResult"></p>
+
+    <hr>
+
+    <h2>4. Access JSON Data</h2>
+
+    <button onclick="accessData()">
+        Show Student Details
+    </button>
+
+    <p id="dataResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // STUDENT OBJECT
+        // --------------------------------
+
+        let student = {
+            name: "Rahul",
+            age: 16,
+            grade: 10,
+            subjects: [
+                "Python",
+                "JavaScript",
+                "HTML"
+            ]
+        };
+
+
+        // --------------------------------
+        // 1. SHOW JAVASCRIPT OBJECT
+        // --------------------------------
+
+        function showObject() {
+
+            document.getElementById("objectResult").innerHTML =
+                "<b>Name:</b> " + student.name +
+                "<br><b>Age:</b> " + student.age +
+                "<br><b>Grade:</b> " + student.grade +
+                "<br><b>Subjects:</b> " +
+                student.subjects.join(", ");
+        }
+
+
+        // --------------------------------
+        // 2. OBJECT → JSON
+        // --------------------------------
+
+        function convertToJSON() {
+
+            let jsonData =
+                JSON.stringify(student);
+
+            document.getElementById("jsonResult").innerHTML =
+                "<b>JSON String:</b><br><br>" +
+                jsonData;
+        }
+
+
+        // --------------------------------
+        // 3. JSON → OBJECT
+        // --------------------------------
+
+        function convertToObject() {
+
+            let jsonData = `
+            {
+                "name": "Ananya",
+                "age": 15,
+                "grade": 9
+            }
+            `;
+
+            let studentObject =
+                JSON.parse(jsonData);
+
+            document.getElementById("parseResult").innerHTML =
+                "<b>Name:</b> " +
+                studentObject.name +
+
+                "<br><b>Age:</b> " +
+                studentObject.age +
+
+                "<br><b>Grade:</b> " +
+                studentObject.grade;
+        }
+
+
+        // --------------------------------
+        // 4. ACCESS JSON DATA
+        // --------------------------------
+
+        function accessData() {
+
+            let jsonData = `
+            {
+                "name": "Rahul",
+                "age": 16,
+                "grade": 10,
+                "marks": {
+                    "math": 95,
+                    "science": 90
+                }
+            }
+            `;
+
+            let studentObject =
+                JSON.parse(jsonData);
+
+            document.getElementById("dataResult").innerHTML =
+                "<b>Name:</b> " +
+                studentObject.name +
+
+                "<br><b>Age:</b> " +
+                studentObject.age +
+
+                "<br><b>Grade:</b> " +
+                studentObject.grade +
+
+                "<br><br>" +
+
+                "<b>Math Marks:</b> " +
+                studentObject.marks.math +
+
+                "<br><b>Science Marks:</b> " +
+                studentObject.marks.science;
+        }
+
+    </script>
+
+</body>
+</html>
