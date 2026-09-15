@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Static Methods</title>
+</head>
+
+<body>
+
+    <h1>Static Methods in JavaScript</h1>
+
+    <p>
+        A static method belongs to the <b>class itself</b>,
+        not to objects created from the class.
+    </p>
+
+    <button onclick="showNormalMethod()">
+        Normal Method
+    </button>
+
+    <button onclick="showStaticMethod()">
+        Static Method
+    </button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // CREATE A CLASS
+        // --------------------------------
+
+        class Student {
+
+            constructor(name, age) {
+
+                this.name = name;
+                this.age = age;
+            }
+
+
+            // --------------------------------
+            // NORMAL METHOD
+            // --------------------------------
+
+            introduce() {
+
+                return "Hello! My name is " +
+                       this.name +
+                       " and I am " +
+                       this.age +
+                       " years old.";
+            }
+
+
+            // --------------------------------
+            // STATIC METHOD
+            // --------------------------------
+
+            static schoolInfo() {
+
+                return "Our school teaches students from Grade 1 to Grade 12.";
+            }
+        }
+
+
+        // --------------------------------
+        // NORMAL METHOD EXAMPLE
+        // --------------------------------
+
+        function showNormalMethod() {
+
+            let student = new Student("Rahul", 16);
+
+            // Normal method is called using the object
+            let message = student.introduce();
+
+            document.getElementById("result").innerHTML =
+                "<b>Normal Method</b><br><br>" +
+                message +
+                "<br><br>" +
+                "Called using: <b>student.introduce()</b>";
+        }
+
+
+        // --------------------------------
+        // STATIC METHOD EXAMPLE
+        // --------------------------------
+
+        function showStaticMethod() {
+
+            // Static method is called using the class
+            let message = Student.schoolInfo();
+
+            document.getElementById("result").innerHTML =
+                "<b>Static Method</b><br><br>" +
+                message +
+                "<br><br>" +
+                "Called using: <b>Student.schoolInfo()</b>";
+        }
+
+    </script>
+
+</body>
+</html>
