@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Error Handling</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Error Handling</h1>
+
+    <p>
+        Error handling allows a program to detect and handle
+        errors without suddenly stopping.
+    </p>
+
+    <hr>
+
+    <h2>1. try and catch</h2>
+
+    <button onclick="tryCatchExample()">
+        Run Example
+    </button>
+
+    <p id="tryCatchResult"></p>
+
+    <hr>
+
+    <h2>2. finally</h2>
+
+    <button onclick="finallyExample()">
+        Run Example
+    </button>
+
+    <p id="finallyResult"></p>
+
+    <hr>
+
+    <h2>3. throw</h2>
+
+    <input type="number" id="age"
+           placeholder="Enter your age">
+
+    <button onclick="checkAge()">
+        Check Age
+    </button>
+
+    <p id="throwResult"></p>
+
+    <hr>
+
+    <h2>4. Complete Error Handling</h2>
+
+    <button onclick="completeExample()">
+        Run Example
+    </button>
+
+    <p id="completeResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. TRY AND CATCH
+        // --------------------------------
+
+        function tryCatchExample() {
+
+            try {
+
+                // This variable does not exist
+                console.log(studentName);
+
+            } catch (error) {
+
+                document.getElementById("tryCatchResult").innerHTML =
+                    "❌ An error occurred." +
+                    "<br><br>" +
+                    "<b>Error message:</b> " +
+                    error.message;
+            }
+        }
+
+
+        // --------------------------------
+        // 2. FINALLY
+        // --------------------------------
+
+        function finallyExample() {
+
+            let message = "";
+
+            try {
+
+                message += "Trying to run the code...<br>";
+
+                let result = 10 / 2;
+
+                message +=
+                    "Result: " + result + "<br>";
+
+            } catch (error) {
+
+                message +=
+                    "An error occurred.<br>";
+
+            } finally {
+
+                message +=
+                    "<br><b>Finally block executed.</b>";
+            }
+
+            document.getElementById("finallyResult").innerHTML =
+                message;
+        }
+
+
+        // --------------------------------
+        // 3. THROW
+        // --------------------------------
+
+        function checkAge() {
+
+            let age =
+                Number(document.getElementById("age").value);
+
+            try {
+
+                if (age < 18) {
+
+                    throw new Error(
+                        "You must be 18 or older."
+                    );
+                }
+
+                document.getElementById("throwResult").innerHTML =
+                    "✅ You are eligible.";
+
+            } catch (error) {
+
+                document.getElementById("throwResult").innerHTML =
+                    "❌ " + error.message;
+            }
+        }
+
+
+        // --------------------------------
+        // 4. COMPLETE EXAMPLE
+        // --------------------------------
+
+        function completeExample() {
+
+            let result = "";
+
+            try {
+
+                let number = 10;
+
+                if (number < 0) {
+
+                    throw new Error(
+                        "Number cannot be negative."
+                    );
+                }
+
+                result =
+                    "Number is valid: " + number;
+
+            } catch (error) {
+
+                result =
+                    "Error: " + error.message;
+
+            } finally {
+
+                result +=
+                    "<br><br>Program finished.";
+            }
+
+            document.getElementById("completeResult").innerHTML =
+                result;
+        }
+
+    </script>
+
+</body>
+</html>
