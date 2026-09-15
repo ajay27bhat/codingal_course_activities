@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Math Object</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Math Object</h1>
+
+    <button onclick="showMathExamples()">Show Examples</button>
+
+    <div id="output"></div>
+
+
+    <script>
+
+        function showMathExamples() {
+
+            let number = 7.6;
+
+            let output = "";
+
+            // Math.PI
+            output += "<p><b>Math.PI:</b> " + Math.PI + "</p>";
+
+            // Math.round()
+            output += "<p><b>Math.round(7.6):</b> "
+                    + Math.round(number) + "</p>";
+
+            // Math.floor()
+            output += "<p><b>Math.floor(7.6):</b> "
+                    + Math.floor(number) + "</p>";
+
+            // Math.ceil()
+            output += "<p><b>Math.ceil(7.6):</b> "
+                    + Math.ceil(number) + "</p>";
+
+            // Math.abs()
+            output += "<p><b>Math.abs(-10):</b> "
+                    + Math.abs(-10) + "</p>";
+
+            // Math.pow()
+            output += "<p><b>Math.pow(2, 3):</b> "
+                    + Math.pow(2, 3) + "</p>";
+
+            // Math.sqrt()
+            output += "<p><b>Math.sqrt(25):</b> "
+                    + Math.sqrt(25) + "</p>";
+
+            // Math.max()
+            output += "<p><b>Math.max(10, 20, 30):</b> "
+                    + Math.max(10, 20, 30) + "</p>";
+
+            // Math.min()
+            output += "<p><b>Math.min(10, 20, 30):</b> "
+                    + Math.min(10, 20, 30) + "</p>";
+
+            // Math.random()
+            output += "<p><b>Math.random():</b> "
+                    + Math.random() + "</p>";
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+    </script>
+
+</body>
+</html>
