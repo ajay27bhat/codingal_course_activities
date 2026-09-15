@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Object</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Math Object</h1>
+
+    <button onclick="showMath()">Show Math Examples</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function showMath() {
+
+            let number = 7.6;
+
+            let result = "";
+
+            result += "<p><b>PI:</b> " + Math.PI + "</p>";
+
+            result += "<p><b>Round:</b> "
+                    + Math.round(number) + "</p>";
+
+            result += "<p><b>Floor:</b> "
+                    + Math.floor(number) + "</p>";
+
+            result += "<p><b>Ceil:</b> "
+                    + Math.ceil(number) + "</p>";
+
+            result += "<p><b>Square Root:</b> "
+                    + Math.sqrt(25) + "</p>";
+
+            result += "<p><b>Power:</b> "
+                    + Math.pow(2, 3) + "</p>";
+
+            result += "<p><b>Absolute Value:</b> "
+                    + Math.abs(-10) + "</p>";
+
+            result += "<p><b>Maximum:</b> "
+                    + Math.max(10, 20, 30) + "</p>";
+
+            result += "<p><b>Minimum:</b> "
+                    + Math.min(10, 20, 30) + "</p>";
+
+            result += "<p><b>Random Number:</b> "
+                    + Math.random() + "</p>";
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+
+</body>
+</html>
