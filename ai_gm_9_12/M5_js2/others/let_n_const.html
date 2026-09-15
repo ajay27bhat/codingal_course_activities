@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript let and const</title>
+</head>
+
+<body>
+
+    <h1>JavaScript: let and const</h1>
+
+    <p>
+        JavaScript uses <b>let</b> and <b>const</b> to create variables.
+    </p>
+
+    <hr>
+
+    <h2>1. Using let</h2>
+
+    <button onclick="showLet()">
+        Demonstrate let
+    </button>
+
+    <p id="letResult"></p>
+
+    <hr>
+
+    <h2>2. Changing a let variable</h2>
+
+    <button onclick="changeLet()">
+        Change let Variable
+    </button>
+
+    <p id="changeLetResult"></p>
+
+    <hr>
+
+    <h2>3. Using const</h2>
+
+    <button onclick="showConst()">
+        Demonstrate const
+    </button>
+
+    <p id="constResult"></p>
+
+    <hr>
+
+    <h2>4. Trying to change const</h2>
+
+    <button onclick="changeConst()">
+        Try to Change const
+    </button>
+
+    <p id="changeConstResult"></p>
+
+    <hr>
+
+    <h2>5. let vs const</h2>
+
+    <button onclick="compare()">
+        Compare
+    </button>
+
+    <p id="compareResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. LET
+        // --------------------------------
+
+        function showLet() {
+
+            let age = 16;
+
+            document.getElementById("letResult").innerHTML =
+                "age = " + age +
+                "<br>typeof age = " + typeof age;
+        }
+
+
+        // --------------------------------
+        // 2. CHANGING LET
+        // --------------------------------
+
+        function changeLet() {
+
+            let age = 16;
+
+            // We can change the value of a let variable
+            age = 17;
+
+            document.getElementById("changeLetResult").innerHTML =
+                "Initial value: 16" +
+                "<br>New value: " + age +
+                "<br><br>✅ A let variable can be changed.";
+        }
+
+
+        // --------------------------------
+        // 3. CONST
+        // --------------------------------
+
+        function showConst() {
+
+            const pi = 3.14159;
+
+            document.getElementById("constResult").innerHTML =
+                "pi = " + pi +
+                "<br>typeof pi = " + typeof pi +
+                "<br><br>🔒 A const variable cannot be reassigned.";
+        }
+
+
+        // --------------------------------
+        // 4. TRYING TO CHANGE CONST
+        // --------------------------------
+
+        function changeConst() {
+
+            const age = 16;
+
+            try {
+
+                // This will cause an error
+                age = 17;
+
+            } catch (error) {
+
+                document.getElementById("changeConstResult").innerHTML =
+                    "Initial value: " + age +
+                    "<br><br>❌ Cannot change a const variable." +
+                    "<br><br>Error: " + error.message;
+            }
+        }
+
+
+        // --------------------------------
+        // 5. LET VS CONST
+        // --------------------------------
+
+        function compare() {
+
+            let score = 50;
+
+            const maximumScore = 100;
+
+            // let can be changed
+            score = 80;
+
+            document.getElementById("compareResult").innerHTML =
+                "<b>let score:</b> " + score +
+                "<br>score was changed from 50 to 80." +
+                "<br><br>" +
+
+                "<b>const maximumScore:</b> " + maximumScore +
+                "<br>maximumScore cannot be reassigned.";
+        }
+
+    </script>
+
+</body>
+</html>
