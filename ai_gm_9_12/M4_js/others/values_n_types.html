@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Values and Types</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Values and Types</h1>
+
+    <button onclick="showValues()">Show Values</button>
+
+    <div id="output"></div>
+
+
+    <script>
+        function showValues() {
+
+            let name = "Ajay";
+            let age = 25;
+            let height = 5.8;
+            let isStudent = true;
+            let value = null;
+            let marks;
+            let numbers = [10, 20, 30];
+
+            document.getElementById("output").innerHTML = `
+                <p><b>String:</b> ${name} → ${typeof name}</p>
+
+                <p><b>Integer:</b> ${age} → ${typeof age}</p>
+
+                <p><b>Float:</b> ${height} → ${typeof height}</p>
+
+                <p><b>Boolean:</b> ${isStudent} → ${typeof isStudent}</p>
+
+                <p><b>Null:</b> ${value} → ${typeof value}</p>
+
+                <p><b>Undefined:</b> ${marks} → ${typeof marks}</p>
+
+                <p><b>Array:</b> ${numbers} → ${typeof numbers}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
