@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Test Method</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Test Method</h1>
+
+    <button onclick="runTest()">Run Test</button>
+
+    <div id="output"></div>
+
+
+    <script>
+
+        function runTest() {
+
+            let output = "";
+
+            // Create a pattern
+            let pattern = /JavaScript/;
+
+            // Text to test
+            let text1 = "I am learning JavaScript.";
+            let text2 = "I am learning Python.";
+
+            // test() checks whether the pattern exists in the text
+            let result1 = pattern.test(text1);
+            let result2 = pattern.test(text2);
+
+            output += "<p>Text: " + text1 + "</p>";
+            output += "<p>Result: " + result1 + "</p>";
+
+            output += "<br>";
+
+            output += "<p>Text: " + text2 + "</p>";
+            output += "<p>Result: " + result2 + "</p>";
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+    </script>
+
+</body>
+</html>
