@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arguments Object</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Arguments Object</h1>
+
+    <button onclick="showArguments()">Show Arguments</button>
+
+    <div id="output"></div>
+
+
+    <script>
+
+        function showArguments() {
+
+            let output = "";
+
+            // Calling the function with different numbers of arguments
+            output += calculate(10, 20, 30);
+
+            output += "<br><br>";
+
+            output += calculate(5, 10, 15, 20, 25);
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+
+        function calculate() {
+
+            let sum = 0;
+
+            // arguments contains all values passed to the function
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+
+            return "Arguments: " + Array.from(arguments) +
+                   "<br>Number of arguments: " + arguments.length +
+                   "<br>Sum: " + sum;
+        }
+
+    </script>
+
+</body>
+</html>
