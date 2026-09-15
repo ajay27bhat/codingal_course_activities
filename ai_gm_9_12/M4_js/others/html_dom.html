@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML DOM Example</title>
+</head>
+
+<body>
+
+    <h1 id="heading">HTML DOM</h1>
+
+    <p id="message">This is a paragraph.</p>
+
+    <button onclick="changePage()">Change Page</button>
+
+
+    <script>
+
+        function changePage() {
+
+            // Find the heading using its ID
+            let heading = document.getElementById("heading");
+
+            // Change the heading text
+            heading.textContent = "Hello JavaScript!";
+
+
+            // Find the paragraph
+            let message = document.getElementById("message");
+
+            // Change the paragraph text
+            message.textContent = "JavaScript is interacting with the DOM.";
+
+
+            // Change the paragraph style
+            message.style.color = "blue";
+            message.style.fontSize = "20px";
+        }
+
+    </script>
+
+</body>
+</html>
