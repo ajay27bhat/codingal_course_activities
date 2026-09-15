@@ -1,28 +1,18 @@
-# 01-binary-search.py
-# Topic: O(log n) and Binary Search
-# Binary search always checks the middle and drops half the list.
+# 02-recursion.py
+# Topic: Recursion and Recursive Time Complexity
+# A function that calls itself. Each call stacks up.
 
-scores = [1, 3, 5, 7, 9, 11, 13, 15, 17]
+n = int(input("Enter n (try 3 or 5): "))
+guess = input("How many times does countdown call itself for n = " + str(n) + "? ")
 
-input("List: " + str(scores) + "   n = 9   Press Enter ")
-guess = input("Max checks to find any number in this list? ")
-target = int(input("Pick a number from the list: "))
+input("Recursion — watch each call.  Press Enter to run ")
+def countdown(num):
+    print("  call — n =", num)
+    if num > 0:
+        countdown(num - 1)
+countdown(n)
+print("  calls =", n + 1, "  your guess:", guess, "  ->  O(n)")
 
-input("Binary search — checks the middle, drops half each round.  Press Enter ")
-low, high = 0, len(scores) - 1
-steps = 0
-while low <= high:
-    mid = (low + high) // 2
-    steps += 1
-    print("  round", steps, "->  checked", scores[mid])
-    if scores[mid] == target:
-        break
-    elif scores[mid] < target:
-        low = mid + 1
-    else:
-        high = mid - 1
-print("  found", target, "at position", mid + 1, "in", steps, "steps   your guess:", guess, "  ->  O(log n)")
-
-input("Steps grow slowly with n.  Press Enter ")
-for n, s in [(9, 4), (100, 7), (1000, 10)]:
-    print("  n =", n, "  max steps =", s, "  ->  O(log n)")
+input("Watch calls grow with n.  Press Enter ")
+for size in [5, 10, 100]:
+    print("  n =", size, "  calls =", size + 1, "  ->  O(n)")
