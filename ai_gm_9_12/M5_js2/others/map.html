@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map an Array</title>
+</head>
+
+<body>
+
+    <h1>JavaScript map() Method</h1>
+
+    <p>
+        The <b>map()</b> method creates a new array by
+        performing an operation on every element.
+    </p>
+
+    <h2>Original Array</h2>
+
+    <p id="original"></p>
+
+    <button onclick="doubleNumbers()">
+        Double Numbers
+    </button>
+
+    <button onclick="squareNumbers()">
+        Square Numbers
+    </button>
+
+    <button onclick="addTen()">
+        Add 10
+    </button>
+
+    <h2>Result</h2>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // Original array
+        let numbers = [1, 2, 3, 4, 5];
+
+        document.getElementById("original").innerHTML =
+            numbers.join(", ");
+
+
+        // --------------------------------
+        // DOUBLE EACH NUMBER
+        // --------------------------------
+
+        function doubleNumbers() {
+
+            let result = numbers.map(function(number) {
+
+                return number * 2;
+
+            });
+
+            document.getElementById("result").innerHTML =
+                "<b>Original:</b> " +
+                numbers.join(", ") +
+                "<br><br>" +
+
+                "<b>After map():</b> " +
+                result.join(", ");
+        }
+
+
+        // --------------------------------
+        // SQUARE EACH NUMBER
+        // --------------------------------
+
+        function squareNumbers() {
+
+            let result = numbers.map(function(number) {
+
+                return number * number;
+
+            });
+
+            document.getElementById("result").innerHTML =
+                "<b>Original:</b> " +
+                numbers.join(", ") +
+                "<br><br>" +
+
+                "<b>Squared:</b> " +
+                result.join(", ");
+        }
+
+
+        // --------------------------------
+        // ADD 10 TO EACH NUMBER
+        // --------------------------------
+
+        function addTen() {
+
+            let result = numbers.map(function(number) {
+
+                return number + 10;
+
+            });
+
+            document.getElementById("result").innerHTML =
+                "<b>Original:</b> " +
+                numbers.join(", ") +
+                "<br><br>" +
+
+                "<b>After adding 10:</b> " +
+                result.join(", ");
+        }
+
+    </script>
+
+</body>
+</html>
