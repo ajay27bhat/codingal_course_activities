@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Promises</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Promises</h1>
+
+    <p>
+        A Promise represents a value that may be available
+        now, later, or may fail.
+    </p>
+
+    <hr>
+
+    <h2>1. Successful Promise</h2>
+
+    <button onclick="successfulPromise()">
+        Run Promise
+    </button>
+
+    <p id="successResult"></p>
+
+    <hr>
+
+    <h2>2. Failed Promise</h2>
+
+    <button onclick="failedPromise()">
+        Run Promise
+    </button>
+
+    <p id="failureResult"></p>
+
+    <hr>
+
+    <h2>3. Promise with User Input</h2>
+
+    <input type="number" id="marks"
+           placeholder="Enter marks">
+
+    <button onclick="checkMarks()">
+        Check Marks
+    </button>
+
+    <p id="marksResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. SUCCESSFUL PROMISE
+        // --------------------------------
+
+        function successfulPromise() {
+
+            document.getElementById("successResult").innerHTML =
+                "⏳ Promise is pending...";
+
+            let promise = new Promise(function(resolve, reject) {
+
+                // Wait for 2 seconds
+                setTimeout(function() {
+
+                    resolve("✅ Task completed successfully!");
+
+                }, 2000);
+
+            });
+
+
+            promise.then(function(result) {
+
+                document.getElementById("successResult").innerHTML =
+                    result;
+
+            });
+        }
+
+
+        // --------------------------------
+        // 2. FAILED PROMISE
+        // --------------------------------
+
+        function failedPromise() {
+
+            document.getElementById("failureResult").innerHTML =
+                "⏳ Promise is pending...";
+
+            let promise = new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    reject("❌ Something went wrong!");
+
+                }, 2000);
+
+            });
+
+
+            promise
+                .then(function(result) {
+
+                    document.getElementById("failureResult").innerHTML =
+                        result;
+
+                })
+                .catch(function(error) {
+
+                    document.getElementById("failureResult").innerHTML =
+                        error;
+
+                });
+        }
+
+
+        // --------------------------------
+        // 3. PROMISE WITH USER INPUT
+        // --------------------------------
+
+        function checkMarks() {
+
+            let marks =
+                Number(document.getElementById("marks").value);
+
+            document.getElementById("marksResult").innerHTML =
+                "Checking marks...";
+
+
+            let promise = new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    if (marks >= 40) {
+
+                        resolve(
+                            "✅ Passed! Your marks are " + marks
+                        );
+
+                    } else {
+
+                        reject(
+                            "❌ Failed! Your marks are " + marks
+                        );
+                    }
+
+                }, 1500);
+
+            });
+
+
+            promise
+                .then(function(message) {
+
+                    document.getElementById("marksResult").innerHTML =
+                        message;
+
+                })
+                .catch(function(error) {
+
+                    document.getElementById("marksResult").innerHTML =
+                        error;
+
+                });
+        }
+
+    </script>
+
+</body>
+</html>
