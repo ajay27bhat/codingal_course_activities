@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search and Replace String</title>
+</head>
+
+<body>
+
+    <h1>Search and Replace String</h1>
+
+    <p>
+        JavaScript provides methods to search for text
+        and replace text inside a string.
+    </p>
+
+    <hr>
+
+    <h2>Original String</h2>
+
+    <p id="original"></p>
+
+    <hr>
+
+    <h2>1. Search using includes()</h2>
+
+    <button onclick="searchText()">
+        Search for "Python"
+    </button>
+
+    <p id="searchResult"></p>
+
+    <hr>
+
+    <h2>2. Find Position using indexOf()</h2>
+
+    <button onclick="findPosition()">
+        Find "Python"
+    </button>
+
+    <p id="positionResult"></p>
+
+    <hr>
+
+    <h2>3. Replace Text</h2>
+
+    <button onclick="replaceText()">
+        Replace "Python" with "JavaScript"
+    </button>
+
+    <p id="replaceResult"></p>
+
+    <hr>
+
+    <h2>4. Replace All Occurrences</h2>
+
+    <button onclick="replaceAllText()">
+        Replace All "Python"
+    </button>
+
+    <p id="replaceAllResult"></p>
+
+
+    <script>
+
+        // Original string
+        let message =
+            "I am learning Python. Python is easy to learn.";
+
+
+        // Display original string
+        document.getElementById("original").innerHTML =
+            message;
+
+
+        // --------------------------------
+        // 1. SEARCH USING includes()
+        // --------------------------------
+
+        function searchText() {
+
+            let found = message.includes("Python");
+
+            document.getElementById("searchResult").innerHTML =
+                "Does the string contain 'Python'? " +
+                "<b>" + found + "</b>";
+        }
+
+
+        // --------------------------------
+        // 2. FIND POSITION USING indexOf()
+        // --------------------------------
+
+        function findPosition() {
+
+            let position = message.indexOf("Python");
+
+            document.getElementById("positionResult").innerHTML =
+                "'Python' starts at index: " +
+                "<b>" + position + "</b>";
+        }
+
+
+        // --------------------------------
+        // 3. REPLACE TEXT
+        // --------------------------------
+
+        function replaceText() {
+
+            let newMessage =
+                message.replace("Python", "JavaScript");
+
+            document.getElementById("replaceResult").innerHTML =
+                "<b>Original:</b><br>" +
+                message +
+                "<br><br>" +
+
+                "<b>After replace():</b><br>" +
+                newMessage;
+        }
+
+
+        // --------------------------------
+        // 4. REPLACE ALL OCCURRENCES
+        // --------------------------------
+
+        function replaceAllText() {
+
+            let newMessage =
+                message.replaceAll("Python", "JavaScript");
+
+            document.getElementById("replaceAllResult").innerHTML =
+                "<b>Original:</b><br>" +
+                message +
+                "<br><br>" +
+
+                "<b>After replaceAll():</b><br>" +
+                newMessage;
+        }
+
+    </script>
+
+</body>
+</html>
