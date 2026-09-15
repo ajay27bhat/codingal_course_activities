@@ -1,0 +1,30 @@
+# Program to demonstrate Set Operations
+
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# 1. Add an element
+set1.add(10)
+print("After adding:", set1)
+
+# 2. Remove an element
+set1.remove(10)
+print("After removing:", set1)
+
+# 3. Union
+print("Union:", set1 | set2)
+
+# 4. Intersection
+print("Intersection:", set1 & set2)
+
+# 5. Difference
+print("Difference:", set1 - set2)
+
+# 6. Symmetric Difference
+print("Symmetric Difference:", set1 ^ set2)
+
+# 7. Check if an element exists
+print("Is 3 present?", 3 in set1)
+
+# 8. Find the number of elements
+print("Length:", len(set1))
