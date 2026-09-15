@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Properties of an Object</title>
+</head>
+
+<body>
+
+    <h1>Properties of an Object</h1>
+
+    <button onclick="showObject()">Show Object</button>
+
+    <div id="output"></div>
+
+
+    <script>
+
+        function showObject() {
+
+            // Creating an object
+            let student = {
+                name: "Rahul",
+                age: 16,
+                grade: 10,
+                city: "Bengaluru"
+            };
+
+            let output = "";
+
+            // Accessing object properties
+            output += "<p><b>Name:</b> " + student.name + "</p>";
+            output += "<p><b>Age:</b> " + student.age + "</p>";
+            output += "<p><b>Grade:</b> " + student.grade + "</p>";
+            output += "<p><b>City:</b> " + student.city + "</p>";
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+    </script>
+
+</body>
+</html>
