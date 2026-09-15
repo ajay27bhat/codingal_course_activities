@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calculator</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Calculator</h1>
+
+    <input type="number" id="number1" placeholder="Enter first number">
+
+    <br><br>
+
+    <input type="number" id="number2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">−</button>
+    <button onclick="calculate('*')">×</button>
+    <button onclick="calculate('/')">÷</button>
+
+    <h2>Result</h2>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // CALCULATOR FUNCTION
+        // --------------------------------
+
+        function calculate(operator) {
+
+            // Get values from input boxes
+            let number1 =
+                Number(document.getElementById("number1").value);
+
+            let number2 =
+                Number(document.getElementById("number2").value);
+
+            let result;
+
+
+            // --------------------------------
+            // CHECK THE OPERATOR
+            // --------------------------------
+
+            if (operator === "+") {
+
+                result = number1 + number2;
+
+            } else if (operator === "-") {
+
+                result = number1 - number2;
+
+            } else if (operator === "*") {
+
+                result = number1 * number2;
+
+            } else if (operator === "/") {
+
+                if (number2 === 0) {
+
+                    document.getElementById("result").innerHTML =
+                        "❌ Cannot divide by zero.";
+
+                    return;
+                }
+
+                result = number1 / number2;
+            }
+
+
+            // --------------------------------
+            // DISPLAY RESULT
+            // --------------------------------
+
+            document.getElementById("result").innerHTML =
+                number1 + " " +
+                operator + " " +
+                number2 + " = <b>" +
+                result +
+                "</b>";
+        }
+
+    </script>
+
+</body>
+</html>
