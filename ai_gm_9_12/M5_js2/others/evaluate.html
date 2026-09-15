@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluate Variables</title>
+</head>
+
+<body>
+
+    <h1>Evaluate Variables</h1>
+
+    <p>
+        JavaScript can use variables in mathematical
+        expressions and evaluate the result.
+    </p>
+
+    <h2>Variables</h2>
+
+    <p id="variables"></p>
+
+    <button onclick="calculate()">
+        Evaluate Expression
+    </button>
+
+    <h2>Result</h2>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // CREATE VARIABLES
+        // --------------------------------
+
+        let a = 10;
+        let b = 5;
+        let c = 2;
+
+
+        // Display the variables
+        document.getElementById("variables").innerHTML =
+            "a = " + a +
+            "<br>b = " + b +
+            "<br>c = " + c;
+
+
+        // --------------------------------
+        // EVALUATE EXPRESSIONS
+        // --------------------------------
+
+        function calculate() {
+
+            let addition = a + b;
+            let subtraction = a - b;
+            let multiplication = a * b;
+            let division = a / b;
+            let expression = a + b * c;
+
+
+            document.getElementById("result").innerHTML =
+
+                "<b>a + b:</b> " + addition +
+
+                "<br><b>a - b:</b> " + subtraction +
+
+                "<br><b>a × b:</b> " + multiplication +
+
+                "<br><b>a ÷ b:</b> " + division +
+
+                "<br><br><b>a + b × c:</b> " +
+                expression;
+        }
+
+    </script>
+
+</body>
+</html>
