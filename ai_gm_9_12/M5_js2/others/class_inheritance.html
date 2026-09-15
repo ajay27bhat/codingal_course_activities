@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Class Inheritance</title>
+</head>
+
+<body>
+
+    <h1>Class Inheritance</h1>
+
+    <p>
+        Inheritance allows one class to use the properties and
+        methods of another class.
+    </p>
+
+    <button onclick="showStudent()">
+        Create Student
+    </button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // PARENT CLASS
+        // --------------------------------
+
+        class Person {
+
+            constructor(name, age) {
+
+                this.name = name;
+                this.age = age;
+            }
+
+            introduce() {
+
+                return "Hello! My name is " +
+                       this.name +
+                       " and I am " +
+                       this.age +
+                       " years old.";
+            }
+        }
+
+
+        // --------------------------------
+        // CHILD CLASS
+        // --------------------------------
+
+        class Student extends Person {
+
+            constructor(name, age, grade) {
+
+                // Call the parent class constructor
+                super(name, age);
+
+                this.grade = grade;
+            }
+
+            study() {
+
+                return this.name +
+                       " is studying in Grade " +
+                       this.grade + ".";
+            }
+        }
+
+
+        // --------------------------------
+        // CREATE OBJECT
+        // --------------------------------
+
+        function showStudent() {
+
+            let student = new Student(
+                "Rahul",
+                16,
+                10
+            );
+
+            document.getElementById("result").innerHTML =
+                "<b>Name:</b> " + student.name +
+                "<br><b>Age:</b> " + student.age +
+                "<br><b>Grade:</b> " + student.grade +
+                "<br><br>" +
+
+                "<b>Parent class method:</b><br>" +
+                student.introduce() +
+
+                "<br><br>" +
+
+                "<b>Child class method:</b><br>" +
+                student.study();
+        }
+
+    </script>
+
+</body>
+</html>
