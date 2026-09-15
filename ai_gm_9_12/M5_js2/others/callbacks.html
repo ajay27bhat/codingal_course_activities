@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Callback Functions</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Callback Functions</h1>
+
+    <p>
+        A callback function is a function that is passed
+        to another function and called later.
+    </p>
+
+    <hr>
+
+    <h2>1. Basic Callback</h2>
+
+    <button onclick="basicCallback()">
+        Run Callback
+    </button>
+
+    <p id="basicResult"></p>
+
+    <hr>
+
+    <h2>2. Callback with a Parameter</h2>
+
+    <button onclick="callbackWithParameter()">
+        Greet Student
+    </button>
+
+    <p id="parameterResult"></p>
+
+    <hr>
+
+    <h2>3. Callback with Array</h2>
+
+    <button onclick="arrayCallback()">
+        Show Numbers
+    </button>
+
+    <p id="arrayResult"></p>
+
+    <hr>
+
+    <h2>4. Callback with setTimeout()</h2>
+
+    <button onclick="delayedCallback()">
+        Start Timer
+    </button>
+
+    <p id="timerResult"></p>
+
+
+    <script>
+
+        // --------------------------------
+        // 1. BASIC CALLBACK
+        // --------------------------------
+
+        function sayHello() {
+
+            document.getElementById("basicResult").innerHTML =
+                "Hello, students!";
+        }
+
+
+        function runFunction(callback) {
+
+            callback();
+        }
+
+
+        function basicCallback() {
+
+            runFunction(sayHello);
+        }
+
+
+        // --------------------------------
+        // 2. CALLBACK WITH PARAMETER
+        // --------------------------------
+
+        function greet(name) {
+
+            document.getElementById("parameterResult").innerHTML =
+                "Hello, " + name + "!";
+        }
+
+
+        function processName(name, callback) {
+
+            callback(name);
+        }
+
+
+        function callbackWithParameter() {
+
+            processName("Rahul", greet);
+        }
+
+
+        // --------------------------------
+        // 3. CALLBACK WITH ARRAY
+        // --------------------------------
+
+        function arrayCallback() {
+
+            let numbers = [10, 20, 30, 40];
+
+            let result = "";
+
+            numbers.forEach(function(number) {
+
+                result +=
+                    "Number: " + number + "<br>";
+
+            });
+
+            document.getElementById("arrayResult").innerHTML =
+                result;
+        }
+
+
+        // --------------------------------
+        // 4. CALLBACK WITH setTimeout()
+        // --------------------------------
+
+        function delayedCallback() {
+
+            document.getElementById("timerResult").innerHTML =
+                "Waiting...";
+
+            setTimeout(function() {
+
+                document.getElementById("timerResult").innerHTML =
+                    "⏰ Callback executed after 2 seconds!";
+
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+</html>
