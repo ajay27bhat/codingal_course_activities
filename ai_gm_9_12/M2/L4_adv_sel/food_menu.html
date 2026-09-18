@@ -13,17 +13,18 @@
     h1 { color: #e65c00; }
 
     /* Sibling Selector - styles the paragraph right after h1 */
-    {
-      
+    h1 + p {
+      background: #ffe0b2;
       padding: 10px 20px;
       border-radius: 8px;
+      color: #bf360c;
       display: inline-block;
     }
 
     ul { padding: 0; margin-top: 20px; }
 
     /* Child Selector - styles only direct li children of ul */
-    {
+    ul > li {
       list-style: none;
       font-size: 18px;
       font-weight: bold;
@@ -36,8 +37,9 @@
     }
 
     /* nth-child - highlights the 3rd item as Chef's Special */
-    {
-      
+    ul li:nth-child(3) {
+      background: #ffe082;
+      color: #e65c00;
     }
 
     .desc {
@@ -69,7 +71,7 @@
       border-radius: 8px;
     }
 
-    {
+    a:hover {
       background: #e65c00;
       color: white;
     }
