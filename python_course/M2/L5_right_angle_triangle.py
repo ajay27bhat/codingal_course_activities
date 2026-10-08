@@ -1,3 +1,13 @@
+"""
+OUTPUT:
+
+enter the number of rows: 4
+* 
+* * 
+* * * 
+* * * * 
+"""
+
 #Take input
 print("Half Pyramid Pattern of Stars (*):")
 n = int(input("enter the number of rows: "))
