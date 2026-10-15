@@ -19,31 +19,28 @@ OUTPUT:
 Welcome to the Lemonade Stand!
 Price per cup is 10
 
-Enter number of cups sold: 4
+Enter number of cups you want: 4
 
 ===== RECEIPT =====
 Price Per Cup : 10
-Cups Sold     : 4
+Cups sold     : 4
 Total Cost    : 40
 ===================
 """
-price = 10
-
-# Function with no arguments
-def greet_customer():
-    print("Welcome to the Lemonade Stand!")
-    print(f"Price per cup is {price}")
-
-# Call the function
-greet_customer()
-
-
-# User Input
-cups = int(input("Enter number of cups you want: "))
 
 # Function with arguments and return value
 def calculate_total(price, cups):
     return price * cups
+
+
+# Define price per cup
+price = 10
+
+print("Welcome to the Lemonade Stand!")
+print(f"Price per cup is {price}")
+
+# User Input
+cups = int(input("Enter number of cups you want: "))
 
 # Call the function
 total = calculate_total(price, cups)
